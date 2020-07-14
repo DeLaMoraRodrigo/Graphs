@@ -115,5 +115,9 @@ class Test(unittest.TestCase):
         ]
         self.assertIn(self.graph.dfs_recursive(1,6), dfs)
 
+    def test_dfs_recursive_not_found(self):
+        dfs = None
+        self.assertIs(self.graph.dfs_recursive(1,16), dfs)
+
 if __name__ == '__main__':
     unittest.main()

@@ -108,6 +108,7 @@ class Graph:
                     copy_path = path.copy()
                     copy_path.append(neighbor)
                     q.enqueue(copy_path)
+        return None
 
 
     def dfs(self, starting_vertex, destination_vertex):
@@ -133,6 +134,7 @@ class Graph:
                     copy_path = path.copy()
                     copy_path.append(neighbor)
                     s.push(copy_path)
+        return None
 
 
     def dfs_recursive(self, starting_vertex, destination_vertex, path=None, visited=None):

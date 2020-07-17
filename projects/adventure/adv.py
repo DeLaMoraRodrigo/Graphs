@@ -1,6 +1,7 @@
 from room import Room
 from player import Player
 from world import World
+from util import Stack, Queue, Graph
 
 import random
 from ast import literal_eval
@@ -29,7 +30,18 @@ player = Player(world.starting_room)
 # traversal_path = ['n', 'n']
 traversal_path = []
 
+def start():
+    graph = Graph()
+    dft_rooms = graph.dft(player.current_room)
+    rooms = [room for room in dft_rooms]
+    print(dft_rooms)
+    print("HOW MANY ROOMS", len(dft_rooms.keys()), "********")
+    print(rooms)
+    print("HOW MANY ROOMS", len(rooms), "********")
+    path = graph.bfs(rooms[0], rooms[4])
+    print("SHORTEST", path, "PATH")
 
+start()
 
 # TRAVERSAL TEST
 visited_rooms = set()

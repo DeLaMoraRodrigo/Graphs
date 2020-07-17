@@ -51,8 +51,7 @@ class Graph:
                     self.vertices[last_room.id][adj_room.id] = direction
                 
                 while len(exits) > 0:
-                    random_exit = random.randrange(0, len(exits))
-                    direction = exits[random_exit]
+                    direction = random.choice(exits)
                     copy_path = path.copy()
                     copy_path.append(last_room.get_room_in_direction(direction))
                     s.push(copy_path)
